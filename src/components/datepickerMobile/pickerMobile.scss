@@ -1,0 +1,321 @@
+@import "../../../static/style/coreCss/px2rem.scss";
+$control-btn:#2c97f1;
+$checked-date:#333;
+$unchecked-date:#a8a8a8;
+$border-color:#e1e1e1;
+$picker-bg:#fff;
+$checked-font-size:px2rem(48px);
+$unchecked-font-size:px2rem(40px);
+$panel-bg:#eeeeee;
+
+
+/*use this should set position relative*/
+@mixin border2pxBT{
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 2px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 2px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@mixin border1pxBT{
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@mixin border2pxT{
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 2px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@mixin border2pxB{
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 2px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@mixin border1pxT{
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@mixin border1pxB{
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $border-color;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+.mobile-mask{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  .mobile-picker{
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    height: px2rem(520px);
+    width: 100%;
+    .picker-control{
+      width: 100%;
+      @include border1pxB;
+      height: px2rem(90px);
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background: $picker-bg;
+      .control-cancel,.control-ok,.control-date{
+        line-height:px2rem(90px);
+        color: $control-btn;
+        width: px2rem(160px);
+        padding:0 px2rem(20px);
+        font-size: px2rem(30px);
+        text-align: center;
+      }
+      .control-date{
+        padding:0;
+        width:px2rem(480px);
+        text-align: center;
+        font-size: px2rem(34px);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+      }
+    }
+    .picker-panel{
+      height: px2rem(430px);
+      overflow: hidden;
+      @include border1pxT;
+      background: $picker-bg;
+      .panel-box{
+        height: inherit;
+        overflow: hidden;
+        padding: px2rem(20px) px2rem(55px);
+        box-shadow: inset 0px 0px 43px #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        font-size: px2rem(40px);
+        text-align: center;
+      }
+      .box-year,.box-month,.box-day,.box-hour,.box-minute{
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        height: px2rem(400px);
+      }
+      .year-list,.month-list,.day-list,.minute-list,.hour-list{
+        position: absolute;
+        top:-1px;
+        z-index: 1;
+        overflow: visible;
+        left: 0;
+        right: 0;
+        color: $checked-date;
+        font-size: px2rem(38px);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        .list-div{
+          text-shadow: 0 1px 1px rgba(102, 102, 102, 0.6);
+          height: px2rem(68px);
+          line-height: px2rem(68px);
+          top:0;
+          width: 100%;
+          text-align: center;
+          background: $picker-bg;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .canNotChoose{
+          color: $unchecked-date;
+          text-shadow: none;
+        }
+      }
+      .check-line{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top:px2rem(180px);
+        height: px2rem(68px);
+        &:before{
+          content: '';
+          position: absolute;
+          left: 0;
+          background: $control-btn;
+          width: 100%;
+          height: 2px;
+          -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          z-index: 3;
+        }
+        &:after{
+          content: '';
+          position: absolute;
+          top:px2rem(68);
+          left: 0;
+          background: $control-btn;
+          width: 100%;
+          height: 2px;
+          -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          z-index:3;
+        }
+      }
+      .year-checked,.month-checked,.day-checked,.hour-checked,.minute-checked{
+        height: px2rem(68px);
+        line-height:px2rem(68px);
+        overflow: hidden;
+        position: absolute;
+        top:px2rem(180px);
+        left: 0;
+        right: 0;
+       /* border-top: 1px solid $control-btn ;
+        border-bottom: 1px solid $control-btn;*/
+        z-index: 2;
+        font-size: px2rem(48px);
+        -webkit-transform: translate3d(0px, 0px, 88px);
+        transform: translate3d(0px, 0px, 88px);
+      }
+      .year-wheel,.month-wheel,.day-wheel,.hour-wheel,.minute-wheel{
+        position: absolute;
+        overflow: visible;
+        height: px2rem(68px);
+        font-size: px2rem(36px);
+        top:px2rem(180px);
+        left: 0;
+        right: 0;
+        color:$unchecked-date;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        .wheel-div{
+          height: px2rem(68px);
+          line-height: px2rem(68px);
+          position: absolute;
+          top:0;
+          width: 100%;
+          text-align: center;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+
+.picker-Toggle-enter-active,.picker-Toggle-leave-active {
+  -webkit-transition: all .75s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  transition: all .75s cubic-bezier(0.190, 1.000, 0.220, 1.000)
+}
+.picker-Toggle-enter {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.picker-Toggle-leave-active {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  opacity: 0;
+}
+/*-----*/
+.toggle-mask-enter-active,.toggle-mask-leave-active {
+  -webkit-transition: all .75s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  transition: all .75s cubic-bezier(0.190, 1.000, 0.220, 1.000)
+}
+.toggle-mask-enter {
+  opacity: 1;
+}
+
+.toggle-mask-leave-active {
+  opacity: 1;
+}
+/*------*/

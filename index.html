@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mobile date picker</title>
+  <meta name="format-detection" content="telephone=no" />
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+  <script type="text/javascript">
+    ;(function(a,b){var c=a.document;var d=c.documentElement;var e=c.querySelector('meta[name=viewport]');var f=c.querySelector('meta[name=H5fit]');var g=0;var h=a.devicePixelRatio;var i=0;var j;var k=b||(b={});if(e){console.warn('根据自定义的meta标签设置缩放');var l=e.getAttribute('content').match(/initial\-scale=([\d\.])/);if(l){i=parseFloat(l[1]);g=parseInt(1/i);}}else if(f){var l=f.getAttribute('content');if(l){var m=l.match(/initial\-dpr=([\d\.])/);var n=l.match(/maximum\-dpr=(\d\.)/);if(m){g=parseFloat(m[1]);i=parseFloat((1/g).toFixed(2))};if(n){g=parseFloat(n[1])>h?parseFloat(n[1]):h;i=parseFloat((1/g).toFixed(2))}}};if(!g&&!i){if(h){g=h};i=1/g};d.setAttribute('data-dpr',g);if(!e){e=c.createElement('meta');e.setAttribute('name','viewport');e.setAttribute('content','initial-scale='+i+', maximum-scale='+i+', minimum-scale='+i+', user-scalable=no');if(d.firstElementChild){d.firstElementChild.appendChild(e)}else{var l=c.createElement('div');l.appendChild('metaEl');c.write(l.innerHTML);}};k.refreshRem=function(){var l=d.getBoundingClientRect().width;var m=l/10;d.style.fontSize=m+'px';k.rem=a.rem=m};k.rem2px=function(l){var m=parseFloat(l)*this.rem;if(typeof l==='string'&&l.match(/rem$/)){m+='px'};return m};k.px2rem=function(l){var m=parseFloat(l)/this.rem;if(typeof l==='string'&&l.match(/px$/)){m+='rem'};return m};a.addEventListener('resize',function(){clearTimeout(j);j=setTimeout(k.refreshRem,300)},false);a.addEventListener('pageshow',function(l){if(l.persisted){clearTimeout(j);j=setTimeout(k.refreshRem,300)}},false);if(c.readyState==='complete'){c.body.style.fontSize=12*g+'px'}else{c.addEventListener('DOMContentLoaded',function(l){c.body.style.fontSize=12*g+'px'},false)};k.refreshRem();k.dpr=a.dpr=g})(window,window['H5fit']||(window['H5fit']={}));
+  </script>
+</head>
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>
