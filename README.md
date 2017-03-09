@@ -39,4 +39,4 @@ npm run build
 
 >`selectDay`:callback function
 
-#[example]()
+#[example](https://github.com/k186/vue-wheel-scroll-datepikcer/blob/master/src/view/pickerMobile/mobilePickerDemo.vue)
