@@ -1,12 +1,10 @@
-### vue deatePicker for mobile component
 
 ## this project is no longer updated ,please us [this](https://github.com/k186/iosSelect) instead
 
 
-###[demo](http://k186studio.com/demos/vue/mobilePicker/)
+### vue deatePicker for mobile component
 
-###result
-![](http://omhgkqaq2.bkt.clouddn.com/mobilepicker1.gif)
+### [demo](http://k186studio.com/demos/vue/mobilePicker/)
 
 
 ###Build Setup
