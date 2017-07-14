@@ -1,5 +1,5 @@
 
-## this project is no longer updated ,please us [this](https://github.com/k186/iosSelect) instead
+## this project is no longer updated ,please use [this](https://github.com/k186/iosSelect) instead
 
 
 ### vue deatePicker for mobile component
